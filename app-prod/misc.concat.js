@@ -1,3 +1,61 @@
+var beautify = {
+	prefixes: [
+	    "m", "b", "t", "q", "Q", "s", "S", "o", "n",
+		"D", "UD", "DD", "TD", "qD", "QD", "sD", "SD", "OD", "ND",
+		"V", "UV", "DV", "TV", "qV", "QV", "sV", "SV", "OV", "NV",
+		"T", "UT", "DT", "TT", "qT", "QT", "sT", "ST", "OT", "NT"
+	],
+
+	beautify: function(x, n) {
+		if (x >= 1e6) {
+			var z = Math.floor(this.logFloor(x) / 3);
+			var s = this.beautify(x / Math.pow(10, 3 * z), n);
+			return s + "" + this.prefixes[z - 2];
+		} else if (x === 0 || typeof x == "undefined" || isNaN(x))
+			return 0;
+		else
+			return this.numberWithCommas(x.toFixed(n));
+	},
+
+	numberWithCommas: function(n) {
+		var parts = n.toString().split(".");
+
+		return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
+	},
+
+	logFloor: function(x) {
+		var count = 0;
+
+		while (x >= 10) {
+			count++;
+			x /= 10;
+		};
+
+		return count;
+	},
+
+	fix: function(x, n) {
+		if (x >= 1e6)
+			return beautify.beautify(x, 3)
+		else if (x < 1e6 && typeof n == 'number')
+			return beautify.beautify(x, n);
+		else if (x < 1e6 && typeof n !== 'number')
+			return beautify.beautify(x, 2);
+	},
+
+	varInit: function() {
+		window['fix'] = beautify.fix;
+	}
+};
+
+beautify.varInit();
+function cap(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+String.prototype.cap = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+};
 // made by Neil Carpenter
 // https://github.com/neilcarpenter/Matrix-code-rain
 
@@ -299,4 +357,112 @@ function initMatrixBackground() {
 	M.init();
 
     $('#matrix').fadeIn('slow');
+};
+function randomInclusive(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+function initSnowBackground(){
+	$('body').prepend('<div id="matrix" class="matrix-effect" style="display: none;">');
+	$('#matrix').append('<canvas id="canvas">');
+	
+	//canvas init
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+	
+	//canvas dimensions
+	var W = window.innerWidth;
+	var H = window.innerHeight;
+	canvas.width = W;
+	canvas.height = H;
+	
+	//snowflake particles
+	var mp = 500; //max particles
+	var particles = [];
+	for(var i = 0; i < mp; i++)
+	{
+		particles.push({
+			x: Math.random()*W, //x-coordinate
+			y: Math.random()*H, //y-coordinate
+			r: Math.random()*4+1, //radius
+			d: Math.random()*mp //density
+		})
+	}
+	
+	//Lets draw the flakes
+	function draw()
+	{
+		ctx.clearRect(0, 0, W, H);
+		
+		ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+		ctx.beginPath();
+		for(var i = 0; i < mp; i++)
+		{
+			var p = particles[i];
+			ctx.moveTo(p.x, p.y);
+			ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
+		}
+		ctx.fill();
+		update();
+	}
+	
+	//Function to move the snowflakes
+	//angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
+	var angle = 0;
+	function update()
+	{
+		angle += 0.01;
+		for(var i = 0; i < mp; i++)
+		{
+			var p = particles[i];
+			//Updating X and Y coordinates
+			//We will add 1 to the cos function to prevent negative values which will lead flakes to move upwards
+			//Every particle has its own density which can be used to make the downward movement different for each flake
+			//Lets make it more random by adding in the radius
+			p.y += Math.cos(angle+p.d) + 1 + p.r/2;
+			p.x += Math.sin(angle) * 2;
+			
+			//Sending flakes back from the top when it exits
+			//Lets make it a bit more organic and let flakes enter from the left and right also.
+			if(p.x > W+5 || p.x < -5 || p.y > H)
+			{
+				if(i%3 > 0) //66.67% of the flakes
+				{
+					particles[i] = {x: Math.random()*W, y: -10, r: p.r, d: p.d};
+				}
+				else
+				{
+					//If the flake is exitting from the right
+					if(Math.sin(angle) > 0)
+					{
+						//Enter from the left
+						particles[i] = {x: -5, y: Math.random()*H, r: p.r, d: p.d};
+					}
+					else
+					{
+						//Enter from the right
+						particles[i] = {x: W+5, y: Math.random()*H, r: p.r, d: p.d};
+					}
+				}
+			}
+		}
+	}
+	
+	//animation loop
+	setInterval(draw, 33);
+	
+	$('#matrix').fadeIn('slow');
+}
+// http://stackoverflow.com/a/19700358
+
+function msToTime(duration) {
+    var milliseconds = parseInt((duration % 1000) / 100),
+        seconds = parseInt((duration / 1000) % 60),
+        minutes = parseInt((duration / (1000 * 60)) % 60),
+        hours = parseInt((duration / (1000 * 60 * 60)) % 24);
+
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+    return hours + ":" + minutes + ":" + seconds;
 };

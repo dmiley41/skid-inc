@@ -1,157 +1,3 @@
-@keyframes barline {
-    0% { opacity: 0.05; top: 0px; }
-    75% { opacity: 0.05; }
-    100% { top: 480px; opacity: 0.00; }
-}
-
-@-webkit-keyframes barline {
-    0% { opacity: 0.05; top: 0px; }
-    75% { opacity: 0.05; }
-    100% { top: 480px; opacity: 0.00; }
-}
-
-@-moz-keyframes barline {
-    0% { opacity: 0.05; top: 0px; }
-    75% { opacity: 0.05; }
-    100% { top: 480px; opacity: 0.00; }
-}
-
-@-o-keyframes barline {
-    0% { opacity: 0.05; top: 0px; }
-    75% { opacity: 0.05; }
-    100% { top: 480px; opacity: 0.00; }
-}
-
-@keyframes blinking-arrow {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@-webkit-keyframes blinking-arrow {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@-moz-keyframes blinking-arrow {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@-o-keyframes blinking-arrow {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes pulse {
-    0% { opacity: 0.21; }
-    25% { opacity: 0.16; }
-    50% { opacity: 0.10; }
-    75% { opacity: 0.18; }
-    100% { opacity: 0.21; }
-}
-
-@-webkit-keyframes pulse {
-    0% { opacity: 0.21; }
-    25% { opacity: 0.16; }
-    50% { opacity: 0.10; }
-    75% { opacity: 0.18; }
-    100% { opacity: 0.21; }
-}
-
-@-moz-keyframes pulse {
-    0% { opacity: 0.21; }
-    25% { opacity: 0.16; }
-    50% { opacity: 0.10; }
-    75% { opacity: 0.18; }
-    100% { opacity: 0.21; }
-}
-
-@-o-keyframes pulse {
-    0% { opacity: 0.21; }
-    25% { opacity: 0.16; }
-    50% { opacity: 0.10; }
-    75% { opacity: 0.18; }
-    100% { opacity: 0.21; }
-}
-
-/* mobile display */
-@media (min-device-width: 320px) and (max-device-width: 767px) {
-    .console {
-        width: 100% !important;
-        height: 100% !important;
-        border: 0 !important;
-        border-radius: 0 !important;
-        margin: 0 !important;
-    }
-    .text {
-        width: 100% !important;
-        height: 100% !important;
-    }
-    .text::before {
-        -o-animation: none !important;
-        -moz-animation: none !important;
-        -webkit-animation: none !important;
-        animation: none !important;
-    }
-    .output {
-        width: 100% !important;
-        height: calc(100% - 40px) !important;
-        padding: 5px !important;
-    }
-    .output p {
-        font-size: 12px !important;
-    }
-    .text-side {
-        width: 70% !important;
-        line-height: 12px !important;
-        overflow-y: auto !important;
-    }
-    .infos-side {
-        width: 30% !important;
-    }
-    .infos-side p {
-        line-height: 12px !important;
-    }
-    .input {
-        margin-bottom: 0 !important;
-    }
-    .input-container {
-        width: calc(100% - 60px - 25px) !important;
-    }
-    .input-text {
-        font-size: 16px !important;
-        line-height: 12px !important;
-    }
-    .screen, .screen::before {
-        width: 100% !important;
-        height: 100% !important;
-        border-radius: 0 !important;
-    }
-    .layer {
-        padding: 0 !important;
-        border-radius: 0 !important;
-    }
-    .layer::after {
-        height: 100% !important;
-    }
-    .logo-layer {
-        z-index: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('../assets/imgs/console-logo-mobile.png') !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;
-        opacity: 0.15;
-    }
-}
-
 @media (min-width: 768px) {
     .console, .console::before, .console::after {
         width: 650px;
@@ -165,11 +11,8 @@
     .input-container {
         width: 550px;
     }
-    .infos-side {
-        width: 30%;
-    }
     .text-side {
-        width: 70%;
+        width: 100%;
     }
 }
 
@@ -186,11 +29,8 @@
     .input-container {
         width: 780px;
     }
-    .infos-side {
-        width: 30%;
-    }
     .text-side {
-        width: 70%;
+        width: 100%;
     }
 }
 
@@ -207,11 +47,8 @@
     .input-container {
         width: 990px;
     }
-    .infos-side {
-        width: 30%;
-    }
     .text-side {
-        width: 70%;
+        width: 100%;
     }
 }
 
@@ -220,7 +57,7 @@
 
 .console {
     margin: 0 auto;
-    height: 550px;
+    height: 650px;
     border: 10px solid #000;
     border-radius: 20px;
     background: #1D1D1D;
@@ -230,7 +67,7 @@
     z-index: 2;
     position: absolute;
     content: '';
-    height: 550px;
+    height: 650px;
     top: -0px;
     border-radius: 20px;
     opacity: 0.5;
@@ -248,11 +85,43 @@
     z-index: 1;
     position: absolute;
     content: '';
-    height: 550px;
+    height: 650px;
     top: -0px;
     border-radius: 20px;
     opacity: 0.05;
     background: #ddd;
+}
+
+.bottom-stats {
+    height: 100px;
+    width: 100%;
+    margin-top: 530px;
+    border-top: 10px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #080808;
+}
+
+.stats .row {
+    padding: 3px 10px;
+}
+
+.console .stats p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #18ff62;
+}
+.console.dark .stats p {
+    color: white !important;
+}
+.console.monokai .stats p {
+    color: #66D9EF;
+}
+.console.afterglow .stats p {
+    color: rgba(255,198,109,1);
+}
+.console.fluoro .stats p {
+    color: rgba(249,91,128,1);
 }
 
 .screen {
@@ -260,7 +129,8 @@
     position: absolute;
     overflow: hidden;
     height: 530px;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     background: #000;
     -webkit-box-shadow: 0px 0px 1px 3px rgba(10, 10, 10, .7);
     box-shadow: 0px 0px 1px 3px rgba(10, 10, 10, .7);
@@ -272,7 +142,7 @@
     content: '';
     height: 530px;
     border-radius: 10px;
-    background: linear-gradient(#fff 50%, #000 50%);
+    background: linear-gradient(rgba(255, 255, 255, 0.6) 50%, #000 50%);
     background-size: 100% 4px;
     background-repeat: repeat-y;
     opacity: 0.15;
@@ -308,7 +178,8 @@
     right: 0;
     bottom: 0;
     padding: 5px;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     background: radial-gradient(ellipse at center,
         rgba(0,255,119,0.3) 0%,
         rgba(255,255,255,0) 100%);
@@ -328,9 +199,25 @@
         rgba(255,255,255,0) 100%);
     opacity: 0.1;
 }
-
+.console.monokai .layer {
+    background: radial-gradient(ellipse at center,
+        rgba(102,217,239,0.4) 0%,
+        rgba(255,255,255,0) 100%);
+}
 .console.dark .layer {
-    background: transparent !important;
+    background: radial-gradient(ellipse at center,
+        rgba(102,171,178,0.4) 0%,
+        rgba(255,255,255,0) 100%);
+}
+.console.afterglow .layer {
+    background: radial-gradient(ellipse at center,
+        rgba(161,97,122,0.4) 0%,
+        rgba(255,255,255,0) 100%);
+}
+.console.fluoro .layer {
+    background: radial-gradient(ellipse at center,
+        rgba(32,9,51,0.7) 0%,
+        rgba(255,255,255,0) 100%);
 }
 
 .text {
@@ -339,6 +226,7 @@
 }
 
 .text::before {
+    display: none;
     position: absolute;
     content: '';
     top: -50px;
@@ -374,11 +262,6 @@
     cursor: default;
 }
 
-.console.dark .output {
-    color: #fff !important;
-    text-shadow: none !important;
-}
-
 .output a {
     transition: color 1s;
     font-weight: bold;
@@ -393,12 +276,88 @@
 .console .output p {
     text-shadow: 2px 2px 8px #337147, -2px -2px 8px #337147, -2px 2px 8px #337147, 2px -2px 8px #337147;
 }
-
+.console.monokai .output p {
+    color: #66D9EF !important;
+    text-shadow: 2px 2px 8px #497f8a, -2px -2px 8px #497f8a, -2px 2px 8px #497f8a, 2px -2px 8px #497f8a;
+}
 .console.dark .output p {
-    text-shadow: 2px 2px 8px #777, -2px -2px 8px #777, -2px 2px 8px #777, 2px -2px 8px #777;
+    color: white !important;
+    text-shadow: 2px 2px 8px #696969, -2px -2px 8px #696969, -2px 2px 8px #696969, 2px -2px 8px #696969;
+}
+.console.afterglow .output p {
+    color: rgba(255,198,109,1) !important;
+    text-shadow: 2px 2px 8px #613c00, -2px -2px 8px #613c00, -2px 2px 8px #613c00, 2px -2px 8px #613c00;
+}
+.console.fluoro .output p {
+    color: rgba(249,91,128,1) !important;
+    text-shadow: 2px 2px 8px #820826, -2px -2px 8px #820826, -2px 2px 8px #820826, 2px -2px 8px #820826;
+}
+
+.console .output .error {
+    color: #f5cd2f !important;
+    text-shadow: 2px 2px 8px #9c5424, -2px -2px 8px #9c5424, -2px 2px 8px #9c5424, 2px -2px 8px #9c5424;
+}
+.console.monokai .output .error {
+    color: #ff85b1 !important;
+    text-shadow: 2px 2px 8px #6f3248, -2px -2px 8px #6f3248, -2px 2px 8px #6f3248, 2px -2px 8px #6f3248;
+}
+.console.dark .output .error {
+    color: #ffd631 !important;
+    text-shadow: 2px 2px 8px #583a25, -2px -2px 8px #583a25, -2px 2px 8px #583a25, 2px -2px 8px #583a25;
+}
+.console.afterglow .output .error {
+    color: #d3422e !important;
+    text-shadow: 2px 2px 8px #5d1c14, -2px -2px 8px #5d1c14, -2px 2px 8px #5d1c14, 2px -2px 8px #5d1c14;
+}
+.console.fluoro .output .error {
+    color: rgba(252,25,154,1) !important;
+    text-shadow: 2px 2px 8px #790245, -2px -2px 8px #790245, -2px 2px 8px #790245, 2px -2px 8px #790245;
+}
+
+.console .output .error b {
+    color: #ffe88d !important;
+}
+.console.monokai .output .error b {
+    color: #da7197 !important;
+}
+.console.dark .output .error b {
+    color: #fdd84b !important;
+}
+.console.afterglow .output .error b {
+    color: #cc7833 !important;
+    text-shadow: 2px 2px 8px #39220e, -2px -2px 8px #39220e, -2px 2px 8px #39220e, 2px -2px 8px #39220e;
+}
+.console.fluoro .output .error b {
+    color: rgba(253,137,2,1) !important;
+    text-shadow: 2px 2px 8px #603401, -2px -2px 8px #603401, -2px 2px 8px #603401, 2px -2px 8px #603401;
+}
+
+.console .output p b {
+    color: #90ffb4;
+}
+.console.monokai .output p b {
+    color: #A6E22E !important;
+    text-shadow: 2px 2px 8px #5a6f31, -2px -2px 8px #5a6f31, -2px 2px 8px #5a6f31, 2px -2px 8px #5a6f31;
+}
+.console.dark .output p b {
+    color: #66ABB2 !important;
+    text-shadow: 2px 2px 8px #3f494a, -2px -2px 8px #3f494a, -2px 2px 8px #3f494a, 2px -2px 8px #3f494a;
+}
+.console.afterglow .output p b {
+    color: #ab7388 !important;
+    text-shadow: 2px 2px 8px #39222b, -2px -2px 8px #39222b, -2px 2px 8px #39222b, 2px -2px 8px #39222b;
+}
+.console.fluoro .output p b {
+    color: rgba(47,252,29,1) !important;
+    text-shadow: 2px 2px 8px #074b01, -2px -2px 8px #074b01, -2px 2px 8px #074b01, 2px -2px 8px #074b01;
+}
+
+.console.monokai .output .error b {
+    text-shadow: 2px 2px 8px #58303f, -2px -2px 8px #58303f, -2px 2px 8px #58303f, 2px -2px 8px #58303f;
 }
 
 .text-side {
+    overflow-y: auto;
     float: left;
     height: 100%;
 }
@@ -434,7 +393,7 @@
     display: block !important;
     overflow: hidden;
     margin-bottom: 15px;
-    width: 100%;
+    /* width: 100%; */
     height: 40px;
     color: #18FF62;
     text-shadow: 0px 0px 2px rgba(10, 255, 10, .8);
@@ -442,9 +401,20 @@
         rgba(0,0,0,0) 0%,
         rgba(0,0,0,0.19) 100%);
 }
-
+.console.monokai .input {
+    color: #66D9EF !important;
+    text-shadow: none !important;
+}
 .console.dark .input {
     color: #fff !important;
+    text-shadow: none !important;
+}
+.console.afterglow .input {
+    color: #a1617a !important;
+    text-shadow: none !important;
+}
+.console.fluoro .input {
+    color: rgba(249,91,128,1) !important;
     text-shadow: none !important;
 }
 
@@ -452,17 +422,29 @@
     float: left;
     height: 100%;
     width: 20px;
-    margin-top: 7px;
+    margin-top: 5px;
     margin-left: 20px;
     line-height: 25px;
     font-size: 30px;
     cursor: pointer;
-    transition: all 150ms;
+    transition: all 250ms;
 }
 
-.blinking-arrow:hover {
-    transition: all 150ms;
+.console .blinking-arrow:hover {
+    transition: all 250ms;
     text-shadow: 0px 0px 8px #18FF62;
+}
+.console.monokai .blinking-arrow:hover {
+    text-shadow: 0px 0px 8px #66D9EF;
+}
+.console.dark .blinking-arrow:hover {
+    text-shadow: 0px 0px 8px #366267 !important;
+}
+.console.afterglow .blinking-arrow:hover {
+    text-shadow: 0px 0px 8px #7c4b5e !important;
+}
+.console.fluoro .blinking-arrow:hover {
+    text-shadow: 0px 0px 8px #820826 !important;
 }
 
 .blinking-arrow > i {
@@ -476,16 +458,28 @@
     float: right;
     height: 100%;
     width: 20px;
-    margin-top: 7px;
+    margin-top: 5px;
     margin-right: 15px;
     font-size: 24px;
     cursor: pointer;
     transition: all 250ms;
 }
 
-.enter:hover {
+.console .enter:hover {
     transition: all 250ms;
     text-shadow: 0px 0px 8px #18FF62;
+}
+.console.monokai .enter:hover {
+    text-shadow: 0px 0px 8px #66D9EF;
+}
+.console.dark .enter:hover {
+    text-shadow: 0px 0px 8px #366267 !important;
+}
+.console.afterglow .enter:hover {
+    text-shadow: 0px 0px 8px #7c4b5e !important;
+}
+.console.fluoro .enter:hover {
+    text-shadow: 0px 0px 8px #820826 !important;
 }
 
 .input-container {
@@ -495,11 +489,29 @@
     font-size: 24px;
     margin-right: 5px;
     transition: 200ms;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
-.input-container:hover {
-    transition: 200ms;
-    box-shadow: 0 0 4px #18FF62;
+.console .input-container:hover {
+    transition: all 350ms;
+    border-color: #0e712e;
+}
+.console.monokai .input-container:hover {
+    border-color: #66D9EF !important;
+}
+.console.dark .input-container:hover {
+    border-color: #366267 !important;
+}
+.console.afterglow .input-container:hover {
+    border-color: #a1617a !important;
+}
+.console.fluoro .input-container:hover {
+    border-color: rgba(181, 3, 104, 1) !important;
+}
+
+#console-input::selection {
+    background: green;
 }
 
 .input-text {
@@ -507,7 +519,8 @@
     height: 30px;
     width: 100%;
     font-size: 18px;
-    padding-bottom: 7px;
+    padding-bottom: 13px;
+    padding-left: 3px;
     border: none;
     background: transparent;
 }
@@ -522,4 +535,12 @@ input:focus {
 
 *:focus {
     outline: none;
+}
+
+.virus-factoid .virus-factoid-content {
+    display: none;
+}
+.virus-factoid:hover .virus-factoid-content,
+.virus-factoid:hover .virus-factoid-content:hover {
+    display: block;
 }
