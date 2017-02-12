@@ -1,5 +1,6 @@
 // made by Neil Carpenter
 // https://github.com/neilcarpenter/Matrix-code-rain
+// adapted to SkidInc by TotomInc
 
 (function() {
 	var lastTime = 0;
@@ -31,14 +32,14 @@
 var M = {
 	settings: {
 		COL_WIDTH: 15,
-		COL_HEIGHT: 25,
+		COL_HEIGHT: 30,
 		VELOCITY_PARAMS: {
 			min: 1,
-			max: 3
+			max: 2
 		},
 		CODE_LENGTH_PARAMS: {
 			min: 5,
-			max: 15
+			max: 10
 		},
 		videoActive: false
 	},
@@ -125,8 +126,8 @@ var M = {
 			M.ctx.fillRect(0, 0, M.WIDTH, M.HEIGHT);
 		}
 		else {
-			M.ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
-			M.ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+			M.ctx.shadowColor = 'rgba(150, 150, 150, 0.5)';
+			M.ctx.fillStyle = 'rgba(150, 150, 150, 0.5)';
 			M.ctx.fillRect(0, 0, M.WIDTH, M.HEIGHT);
 			M.ctx.globalAlpha = 0.2;
 			M.ctx.drawImage(M.video, 0, 0, M.WIDTH, M.HEIGHT);
@@ -211,11 +212,11 @@ var M = {
 			newCtx.font = '30px matrix-code';
 
 			if (j < 5) {
-				newCtx.shadowColor = 'hsl(104, 79%, 74%)';
+				newCtx.shadowColor = 'hsl(210, 79%, 74%)';
 				newCtx.shadowOffsetX = 0;
 				newCtx.shadowOffsetY = 0;
 				newCtx.shadowBlur = 10;
-				newCtx.fillStyle = 'hsla(104, 79%, ' + (100 - (j * 5)) + '%, ' + strength + ')';
+				newCtx.fillStyle = 'hsla(210, 79%, ' + (100 - (j * 5)) + '%, ' + strength + ')';
 			}
 			else if (j > (codeLen - 4)) {
 				fadeStrength = j / codeLen;
@@ -224,13 +225,13 @@ var M = {
 				newCtx.shadowOffsetX = 0;
 				newCtx.shadowOffsetY = 0;
 				newCtx.shadowBlur = 0;
-				newCtx.fillStyle = 'hsla(104, 79%, 74%, ' + (fadeStrength + 0.3) + ')';
+				newCtx.fillStyle = 'hsla(210, 79%, 74%, ' + (fadeStrength + 0.3) + ')';
 			}
 			else {
 				newCtx.shadowOffsetX = 0;
 				newCtx.shadowOffsetY = 0;
 				newCtx.shadowBlur = 0;
-				newCtx.fillStyle = 'hsla(104, 79%, 74%, ' + strength + ')';
+				newCtx.fillStyle = 'hsla(210, 79%, 74%, ' + strength + ')';
 			}
 
 			newCtx.fillText(text, 0, (canvHeight - (j * M.settings.COL_HEIGHT)));
@@ -290,13 +291,4 @@ var M = {
 		M.createLines(M.ctx);
 		window.open(M.c.toDataURL());
 	}
-};
-
-function initMatrixBackground() {
-	$('body').prepend('<div id="matrix" class="matrix-effect" style="display: none;">');
-	$('#matrix').append('<canvas id="canvas">');
-
-	M.init();
-
-    $('#matrix').fadeIn('slow');
 };

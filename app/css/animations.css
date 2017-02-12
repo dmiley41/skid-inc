@@ -1,27 +1,3 @@
-@keyframes barline {
-    0% { opacity: 0.05; top: 0px; }
-    75% { opacity: 0.05; }
-    100% { top: 480px; opacity: 0.00; }
-}
-
-@-webkit-keyframes barline {
-    0% { opacity: 0.05; top: 0px; }
-    75% { opacity: 0.05; }
-    100% { top: 480px; opacity: 0.00; }
-}
-
-@-moz-keyframes barline {
-    0% { opacity: 0.05; top: 0px; }
-    75% { opacity: 0.05; }
-    100% { top: 480px; opacity: 0.00; }
-}
-
-@-o-keyframes barline {
-    0% { opacity: 0.05; top: 0px; }
-    75% { opacity: 0.05; }
-    100% { top: 480px; opacity: 0.00; }
-}
-
 @keyframes blinking-arrow {
     0% { opacity: 1; }
     50% { opacity: 0; }

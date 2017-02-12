@@ -4,25 +4,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>SkidInc</title>
+    
+    <title>SkidInc - Idle-game</title>
 
     <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Space+Mono">
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="lib/components-font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="app/css/interface.css">
     <link rel="stylesheet" href="app/css/animations.css">
     <link rel="stylesheet" href="app/css/console.css">
     <link rel="stylesheet" href="app/css/custom-bootstrap.css">
-    <link rel="stylesheet" href="app/css/matrix.css">
-    <link rel="stylesheet" href="app/css/typedjs.css">
+    
+    <link rel="stylesheet" href="app/css/misc/typedjs.css">
+    <link rel="stylesheet" href="app/css/misc/matrix.css">
+    
+    <link rel="stylesheet" href="app/css/themes/fallout.css">
 
-    <script src="lib/jquery/js/jquery.min.js"></script>
-    <script src="lib/typed.js/js/typed.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script src='https://cdn1.kongregate.com/javascripts/kongregate_api.js'></script>
 </head>
 
 <body class="noselect">
+    <div id="matrix" class="matrix-effect" style="display: none;">
+        <canvas id="canvas"></canvas>
+    </div>
+    
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -31,7 +40,7 @@
             
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a id ="navbar-bonustime"></a></li>
+                    <li><a id ="navbar-scriptinfos"></a></li>
                 </ul>
             </div>
         </div>
@@ -75,14 +84,13 @@
                                     <p id="stats-exp"></p>
                                 </div>
                                 <div id="col-2" class="col-sm-4 col-md-4 text-center">
-                                    <p id="stats-timemult"></p>
-                                    <p id="stats-moneymult"></p>
-                                    <p id="stats-expmult"></p>
+                                    <p id="stats-money-mult"></p>
+                                    <p id="stats-exp-mult"></p>
+                                    <p id="stats-time-mult"></p>
                                 </div>
                                 <div id="col-3" class="col-sm-4 col-md-4 text-right">
-                                    <p id="stats-reputation"></p>
-                                    <p id="stats-totalmoney"></p>
-                                    <p id="stats-prestigied"></p>
+                                    <p id="stats-vm-cost"></p>
+                                    <p id="stats-vps-cost"></p>
                                 </div>
                             </div>
                         </div>
@@ -92,45 +100,22 @@
         </div>
     </div>
 
-    <!--<script src="app-prod/misc.concat.js"></script>-->
-    <!--<script src="app-prod/game.concat.js"></script>-->
-
-    <script src="app/js/misc/matrix.js"></script>
-    <script src="app/js/misc/snow.js"></script>
-    <script src="app/js/misc/beautify.js"></script>
-    <script src="app/js/misc/capitalize.js"></script>
-    <script src="app/js/misc/random.js"></script>
-    <script src="app/js/misc/time.js"></script>
-
-    <script src="app/js/game/core.js"></script>
-    <script src="app/js/game/hack.js"></script>
-    <script src="app/js/game/hack-hackers.js"></script>
-    <script src="app/js/game/hack-places.js"></script>
-    <script src="app/js/game/virus.js"></script>
-    <script src="app/js/game/virus-list.js"></script>
-    <script src="app/js/game/kongregate.js"></script>
-    <script src="app/js/game/player.js"></script>
-    <script src="app/js/game/servers.js"></script>
-    <script src="app/js/game/botnet.js"></script>
+    <script src="app/js/helpers/beautify.js"></script>
+    <script src="app/js/helpers/matrix.js"></script>
+    
+    <script src="app/js/game/main.js"></script>
     <script src="app/js/game/console.js"></script>
-    <script src="app/js/game/console-commands.js"></script>
+    <script src="app/js/game/player.js"></script>
+    <script src="app/js/game/script.js"></script>
+    <script src="app/js/game/autoscript.js"></script>
+    <script src="app/js/game/buy.js"></script>
+    <script src="app/js/game/servers.js"></script>
     <script src="app/js/game/options.js"></script>
-    <script src="app/js/game/save.js"></script>
     
     <script type="text/javascript">
         $(document).ready(function() {
-            game.init();
+            return SkidInc.init();
         });
-    </script>
-    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-54540685-21', 'auto');
-      ga('send', 'pageview');
     </script>
 </body>
 </html>

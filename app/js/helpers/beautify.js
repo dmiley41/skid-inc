@@ -1,6 +1,6 @@
-var beautify = {
+var Beautify = {
 	prefixes: [
-	    "m", "b", "t", "q", "Q", "s", "S", "o", "n",
+		"m", "b", "t", "q", "Q", "s", "S", "o", "n",
 		"D", "UD", "DD", "TD", "qD", "QD", "sD", "SD", "OD", "ND",
 		"V", "UV", "DV", "TV", "qV", "QV", "sV", "SV", "OV", "NV",
 		"T", "UT", "DT", "TT", "qT", "QT", "sT", "ST", "OT", "NT"
@@ -11,7 +11,8 @@ var beautify = {
 			var z = Math.floor(this.logFloor(x) / 3);
 			var s = this.beautify(x / Math.pow(10, 3 * z), n);
 			return s + "" + this.prefixes[z - 2];
-		} else if (x === 0 || typeof x == "undefined" || isNaN(x))
+		}
+		else if (x === 0 || typeof x == "undefined" || isNaN(x))
 			return 0;
 		else
 			return this.numberWithCommas(x.toFixed(n));
@@ -36,16 +37,16 @@ var beautify = {
 
 	fix: function(x, n) {
 		if (x >= 1e6)
-			return beautify.beautify(x, 3)
+			return Beautify.beautify(x, 3)
 		else if (x < 1e6 && typeof n == 'number')
-			return beautify.beautify(x, n);
+			return Beautify.beautify(x, n);
 		else if (x < 1e6 && typeof n !== 'number')
-			return beautify.beautify(x, 2);
+			return Beautify.beautify(x, 2);
 	},
-
-	varInit: function() {
-		window['fix'] = beautify.fix;
+	
+	init: function() {
+		return window['fix'] = Beautify.fix;
 	}
 };
 
-beautify.varInit();
+Beautify.init();

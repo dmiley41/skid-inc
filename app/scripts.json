@@ -1,0 +1,92 @@
+{
+    "adclicker.sh": {
+        "name": "adclicker.sh",
+        "desc": "the first script made by yourself, not really effective but it does the job.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 0,
+        "costType": "number",
+        "money": 75,
+        "exp": 8,
+        "time": 4,
+        "index": 0
+    },
+    
+    "phisher.bat": {
+        "name": "phisher.bat",
+        "desc": "generate a lot of fake emails to scam websites.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 500,
+        "costType": "number",
+        "money": 600,
+        "exp": 40,
+        "time": 8,
+        "index": 1
+    },
+    
+    "surveybot.py": {
+        "name": "surveybot.py",
+        "desc": "this bot will complete rewarded surveys to earn even more.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 4250,
+        "costType": "number",
+        "money": 5400,
+        "exp": 200,
+        "time": 16,
+        "index": 2
+    },
+    
+    "bitcoiner.hex": {
+        "name": "bitcoiner.hex",
+        "desc": "your first Bitcoin miner script, it's slow but it works.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 65875,
+        "costType": "number",
+        "money": 43200,
+        "exp": 800,
+        "time": 48,
+        "index": 3
+    },
+    
+    "injection.js": {
+        "name": "injection.js",
+        "desc": "a small script to inject evil code on an enterprise, retrieve informations, and sell them.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 1086937,
+        "costType": "number",
+        "money": 518400,
+        "exp": 3200,
+        "time": 192,
+        "index": 4
+    },
+    
+    "bitminer.jar": {
+        "name": "bitminer.jar",
+        "desc": "an upgrade of your old script <b>bitcoiner.hex</b>, but this one is stronger and faster than before.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 19021406,
+        "costType": "number",
+        "money": 6220800,
+        "exp": 12800,
+        "time": 768,
+        "index": 5
+    },
+    
+    "worm.c": {
+        "name": "worm.c",
+        "desc": "infect computers and make them explode!",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 475535156,
+        "costType": "number",
+        "money": 74649610,
+        "exp": 51200,
+        "time": 3072,
+        "index": 6
+    }
+}

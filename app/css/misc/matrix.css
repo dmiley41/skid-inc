@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'matrix-code';
-    src: url("../fonts/matrix-code.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/matrix-code.woff") format("woff"),
-        url("../fonts/matrix-code.ttf") format("truetype"),
-        url("../fonts/matrix-code.svg#svgFontName") format("svg");
+    src: url("../../fonts/matrix-code.eot?#iefix") format("embedded-opentype"),
+        url("../../fonts/matrix-code.woff") format("woff"),
+        url("../../fonts/matrix-code.ttf") format("truetype"),
+        url("../../fonts/matrix-code.svg#svgFontName") format("svg");
 }
 
 .matrix-effect canvas {

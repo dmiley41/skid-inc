@@ -1,0 +1,71 @@
+{
+    "adclicker.sh": {
+        "name": "adclicker.sh",
+        "desc": "<b>adclicker.sh</b> autoscript.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 1000,
+        "costType": "number",
+        "index": 0
+    },
+    
+    "phisher.bat": {
+        "name": "phisher.bat",
+        "desc": "<b>phisher.bat</b> autoscript.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 5000,
+        "costType": "number",
+        "index": 1
+    },
+    
+    "surveybot.py": {
+        "name": "surveybot.py",
+        "desc": "<b>surveybot.py</b> autoscript.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 10000,
+        "costType": "number",
+        "index": 2
+    },
+    
+    "bitcoiner.hex": {
+        "name": "bitcoiner.hex",
+        "desc": "<b>bitcoiner.hex</b> autoscript.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 65875,
+        "costType": "number",
+        "index": 3
+    },
+    
+    "injection.js": {
+        "name": "injection.js",
+        "desc": "<b>injection.js</b> autoscript.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 2500000,
+        "costType": "number",
+        "index": 4
+    },
+    
+    "bitminer.jar": {
+        "name": "bitminer.jar",
+        "desc": "<b>bitminer.jar</b> autoscript",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 50000000,
+        "costType": "number",
+        "index": 5
+    },
+    
+    "worm.c": {
+        "name": "worm.c",
+        "desc": "<b>worm.c</b> autoscript.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 1750000000,
+        "costType": "number",
+        "index": 6
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "vm": {
+        "name": "vm",
+        "desc": "increase your money multiplier by <b>+1</b> and your experience multiplier by <b>+0.75</b>.",
+        "descInList": true,
+        "oneTime": false,
+        "costType": "formula",
+        "costFormula": "250000 * Math.pow(1.15, (owned + 1))",
+        "cost": 250000,
+        "effects": {
+            "money": 1,
+            "exp": 0.75
+        },
+        "index": 0
+    },
+    
+    "vps": {
+        "name": "vps",
+        "desc": "increase your time multiplier by <b>+0.25</b>.",
+        "descInList": true,
+        "oneTime": false,
+        "costType": "formula",
+        "costFormula": "1000000 * Math.pow(1.15, (owned + 1))",
+        "cost": 1000000,
+        "effects": {
+            "time": 0.25
+        },
+        "index": 1
+    }
+}

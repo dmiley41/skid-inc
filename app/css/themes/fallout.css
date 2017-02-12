@@ -1,0 +1,47 @@
+.console.fallout .layer {
+    background: radial-gradient(ellipse at center,
+        rgba(0, 236, 110, 0.2) 0%,
+        rgba(255,255,255,0) 110%);
+    opacity: 1;
+}
+
+.console.fallout .output {
+    color: #18FF62;
+    text-shadow: 1px 1px 4px rgb(6, 84, 6), -1px -1px 4px rgb(6, 84, 6), -1px 1px 4px rgb(6, 84, 6), 1px -1px 4px rgb(6, 84, 6);
+}
+
+.console.fallout .output p b {
+    color: #64ff96;
+    text-shadow: 1px 1px 4px rgb(5, 58, 5), -1px -1px 4px rgb(5, 58, 5), -1px 1px 4px rgb(5, 58, 5), 1px -1px 4px rgb(5, 58, 5);
+}
+
+.console.fallout .input {
+    color: #18FF62;
+    text-shadow: 0px 0px 2px rgb(6, 84, 6);
+}
+
+.console.fallout .input-container:hover {
+    border-color: rgb(64, 158, 64);
+}
+
+.console.fallout .blinking-arrow:hover,
+.console.fallout .enter:hover {
+    text-shadow: 0px 0px 8px rgb(6, 84, 6);
+}
+
+.console.fallout .stats p{
+    color: #18FF62;
+}
+
+.console.fallout *::-webkit-scrollbar-thumb {
+    background: rgba(64, 158, 64, 1);
+}
+
+.navbar-default.fallout .navbar-brand,
+.navbar-default.fallout .navbar-nav>li>a {
+    color: #64ff96;
+}
+.navbar-default.fallout .navbar-brand small,
+.navbar-default.fallout .navbar-nav>li>a b {
+    color: #18FF62;
+}

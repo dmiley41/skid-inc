@@ -1,0 +1,59 @@
+{
+    "help": {
+        "full": "help",
+        "desc": "print a list of all available commands.",
+        "list": false,
+        "args": false,
+        "exec": "SkidInc.Main.help"
+    },
+    
+    "script": {
+        "full": "script [name] [argument]",
+        "desc": "run scripts to gain money and experience.",
+        "list": true,
+        "listExec": "SkidInc.Script.list",
+        "args": true,
+        "argsNeeded": ["req", "opt"],
+        "argsType": ["string", "string"],
+        "argsHelpName": ["name", "argument"],
+        "argsHelp": ["the name of the script you want to execute.",
+            "an optional argument can be included such as <b>-c</b> to stop <b>[name]</b> script."],
+        "exec": "SkidInc.Script.exec"
+    },
+    
+    "buy": {
+        "full": "buy [category] [item]",
+        "desc": "buy things to enhance your hacking income.",
+        "list": true,
+        "listExec": "SkidInc.Buy.list",
+        "args": true,
+        "argsNeeded": ["req", "req"],
+        "argsType": ["string", "string"],
+        "argsHelpName": ["category", "item"],
+        "argsHelp": ["a category which contain your item.",
+            "must match the item in its category."],
+        "exec": "SkidInc.Buy.exec"
+    },
+    
+    "option": {
+        "full": "option [option] [parameter]",
+        "desc": "change game options.",
+        "list": true,
+        "listExec": "SkidInc.Options.list",
+        "args": true,
+        "argsNeeded": ["req", "req"],
+        "argsType": ["string", "string"],
+        "argsHelpName": ["option", "parameter"],
+        "argsHelp": ["an option you want to change.",
+            "must be <b>true</b> or <b>false</b>."],
+        "exec": "SkidInc.Options.exec"
+    },
+    
+    "clear": {
+        "full": "clear",
+        "desc": "clear text from the console.",
+        "list": false,
+        "args": false,
+        "exec": "SkidInc.clear"
+    }
+}

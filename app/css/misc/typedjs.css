@@ -1,0 +1,12 @@
+.typed-cursor {
+    display: none;
+}
+
+div.typed {
+    margin-bottom: 6px;
+    display: block;
+}
+
+div.typed p {
+    display: inline;
+}
