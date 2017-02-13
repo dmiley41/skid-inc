@@ -1,3 +1,7 @@
+.console.fallout .stats p {
+    text-shadow: 1px 1px 4px rgb(6, 84, 6), -1px -1px 4px rgb(6, 84, 6), -1px 1px 4px rgb(6, 84, 6), 1px -1px 4px rgb(6, 84, 6);
+}
+
 .console.fallout .layer {
     background: radial-gradient(ellipse at center,
         rgba(0, 236, 110, 0.2) 0%,

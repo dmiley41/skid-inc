@@ -108,6 +108,7 @@
 .console .stats p {
     font-size: 14px;
     line-height: 20px;
+    text-shadow: 1px 1px 4px rgb(73, 86, 86), -1px -1px 4px rgb(73, 86, 86), -1px 1px 4px rgb(73, 86, 86), 1px -1px 4px rgb(73, 86, 86);
     color: rgba(191,215,219,1);
 }
 

@@ -5,6 +5,7 @@
         "SkidInc": true,
         "fix": true,
         "M": true,
-        "document": true
+        "document": true,
+        "window": true
     }
 }

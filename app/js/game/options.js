@@ -1,7 +1,7 @@
 SkidInc.Options = {
     options: ['background', 'typing'],
     execPath: ['SkidInc.Options.toggleBackground', 'SkidInc.Options.toggleTyping'],
-    toggled: [false, false],
+    toggled: [true, false],
     
     toggleBackground: function(param) {
         if (param == true) {
