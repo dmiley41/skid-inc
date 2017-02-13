@@ -1,0 +1,10 @@
+{
+    "globals": {
+        "moment": true,
+        "$": true,
+        "SkidInc": true,
+        "fix": true,
+        "M": true,
+        "document": true
+    }
+}
