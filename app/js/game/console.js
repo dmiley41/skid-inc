@@ -28,7 +28,7 @@ SkidInc.Console = {
                 return SkidInc.Main.detailledHelp(base);
             else if (args.indexOf('-h') > -1)
                 return SkidInc.print('The <b>-h</b> argument must be the only one argument in your command <b>' + str + '</b>.');
-            
+
             // got -l arg and in the right place and command accept it
             if (args.indexOf('-l') == 0 && typeof args[1] == 'undefined' && thisCommand.list)
                 return SkidInc.Main.list(base);
@@ -36,22 +36,6 @@ SkidInc.Console = {
                 return SkidInc.print('The <b>' + base + '</b> command doesn\'t accept the <b>-l</b> argument.');
             else if (args.indexOf('-l') > -1)
                 return SkidInc.print('The <b>-l</b> argument must be the only one argument in your command <b>' + str + '</b>.');
-            
-            // to finish: better list with args
-            // if (args.indexOf('-l') == 0) {
-            //     if (!thisCommand.list)
-            //         return SkidInc.print('The <b>' + base + '</b> command doesn\'t accept the <b>-l</b> argument.');
-                
-            //     if (thisCommand.listArgs) {
-            //     };
-                
-            //     if (!thisCommand.listArgs) {
-            //         if (args.indexOf('-l') == 0 && typeof args[1] == 'undefined')
-            //             return SkidInc.Main.list(base);
-            //         else if (args.indexOf('-l') > -1)
-            //             return SkidInc.print('The <b>-l</b> argument must be the only one argument in your command <b>' + str + '</b>.');
-            //     };
-            // };
             
             // args handler
             for (var i = 0; i < thisCommand.argsNeeded.length; i++) {

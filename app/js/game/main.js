@@ -84,11 +84,14 @@ SkidInc.Main = {
         return SkidInc.print(str);
     },
 
-    list: function(b) {
+    list: function(b, a) {
         var command = SkidInc.Console.commands[b],
             exec = command.listExec;
 
-        return eval(exec)();
+        if (typeof a == 'object')
+            return eval(exec)(a);
+        else if (typeof a == 'undefined')
+            return eval(exec)();
     },
 
     display: function() {
