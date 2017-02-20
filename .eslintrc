@@ -2,6 +2,8 @@
     "globals": {
         "moment": true,
         "$": true,
+        "io": true,
+        "socket": true,
         "SkidInc": true,
         "fix": true,
         "M": true,

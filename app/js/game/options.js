@@ -84,7 +84,7 @@ SkidInc.Options = {
             return eval(SkidInc.Options.execPath[index])(parameter);
         };
     },
-    
+
     init: function() {
         if (SkidInc.Options.toggled[SkidInc.Options.options.indexOf('background')] == true)
             $('#matrix').fadeIn('slow');

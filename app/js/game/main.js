@@ -52,6 +52,7 @@ $.extend(SkidInc, {
                         M.init(); // matrix background init
                         SkidInc.Options.init();
                         SkidInc.Main.init();
+                        SkidInc.Socket.init();
                     });
                 });
             });
