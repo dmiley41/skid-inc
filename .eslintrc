@@ -8,6 +8,9 @@
         "fix": true,
         "M": true,
         "document": true,
-        "window": true
+        "window": true,
+        "localStorage": true,
+        "atob": true,
+        "btoa":  true
     }
 }

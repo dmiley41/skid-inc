@@ -4,6 +4,18 @@ SkidInc.Options = {
     toggled: [true, false, 'default'],
     themes: ['default', 'fallout'],
     themesLocked: [false, true],
+    uuid: null,
+    
+    guid: function() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        };
+        
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+            s4() + '-' + s4() + s4() + s4();
+    },
     
     getThemes: function() {
         var themes = '';
@@ -88,6 +100,8 @@ SkidInc.Options = {
     init: function() {
         if (SkidInc.Options.toggled[SkidInc.Options.options.indexOf('background')] == true)
             $('#matrix').fadeIn('slow');
+        
+        SkidInc.Options.uuid = SkidInc.Options.guid();
         
         return console.info('SkidInc.Options init done.');
     }
