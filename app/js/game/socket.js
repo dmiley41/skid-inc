@@ -1,13 +1,21 @@
 SkidInc.Socket = {
     connect: true,
+    dev: false,
     
     init: function() {
         if (!SkidInc.Socket.connect)
             return;
         
-        SkidInc.Socket.socket = io('http://skid-inc-server-totominc.c9users.io/', {
-            reconnect: false
-        });
+        if (SkidInc.Socket.dev) {
+            SkidInc.Socket.socket = io('http://skid-inc-server-totominc.c9users.io/', {
+                reconnect: false
+            });
+        }
+        else {
+            SkidInc.Socket.socket = io('http://skid-inc-server.herokuapp.com/', {
+                reconnect: false
+            });
+        };
 
         SkidInc.Socket.socket.on('connect', function() {
             SkidInc.Socket.socket.emit('user_log', {});
@@ -27,15 +35,23 @@ SkidInc.Socket = {
         });
         
         SkidInc.Socket.socket.on('cloud_save_success', function() {
-            $('#navbar-cloudsuccess').fadeIn('slow', function() {
-                $('#navbar-cloudsuccess').fadeOut('slow');
+            $('#navbar-events').html('<i class="fa fa-cloud-upload"></i> Cloud save done.');
+            $('#navbar-events').fadeIn('slow', function() {
+                $('#navbar-events').fadeOut('slow');
             });
             
             console.info('Cloud save success.');
         });
         
-        SkidInc.Socket.socket.on('btn_test_click_receive', function() {
-            console.log('This is a test sent by one of the developers. If you see that, he is working on the code of the game');
+        SkidInc.Socket.socket.on('cloud_load_success', function(save) {
+            $('#navbar-events').html('<i class="fa fa-cloud-download"></i> Cloud save loaded.');
+            $('#navbar-events').fadeIn('slow', function() {
+                $('#navbar-events').fadeOut('slow');
+            });
+            
+            SkidInc.Save.loadSavefile(save);
+            
+            console.info('Cloud load success.');
         });
     }
 };
