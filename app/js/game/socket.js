@@ -1,6 +1,6 @@
 SkidInc.Socket = {
-    connect: true,
-    dev: false,
+    connect: false,
+    dev: true,
     
     init: function() {
         if (!SkidInc.Socket.connect)
@@ -43,6 +43,12 @@ SkidInc.Socket = {
             console.info('Cloud save success.');
         });
         
+        SkidInc.Socket.socket.on('cloud_save_not_found', function() {
+            SkidInc.print('Cloud save not found!');
+            
+            console.info('Cloud save not found.');
+        });
+        
         SkidInc.Socket.socket.on('cloud_load_success', function(save) {
             $('#navbar-events').html('<i class="fa fa-cloud-download"></i> Cloud save loaded.');
             $('#navbar-events').fadeIn('slow', function() {
@@ -50,6 +56,7 @@ SkidInc.Socket = {
             });
             
             SkidInc.Save.loadSavefile(save);
+            SkidInc.print('Cloud save loaded!');
             
             console.info('Cloud load success.');
         });

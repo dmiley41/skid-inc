@@ -1,0 +1,73 @@
+{
+    "boza": {
+        "name": "boza",
+        "desc": "Boza is the first virus to infect executables.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 1e9,
+        "costType": "number",
+        "time": 1200,
+        "amount": 1,
+        "index": 0
+    },
+    
+    "memz": {
+        "name": "memz",
+        "desc": "memz is a detructive trojan that overwrite your MBR.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 1e12,
+        "costType": "number",
+        "time": 3600,
+        "amount": 5,
+        "index": 1
+    },
+    
+    "magistr": {
+        "name": "magistr",
+        "desc": "magistr is a virus who delete random files.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 1e15,
+        "costType": "number",
+        "time": 10800,
+        "amount": 25,
+        "index": 2
+    },
+    
+    "stuxnet": {
+        "name": "stuxnet",
+        "desc": "stuxnet was made to destroy machinery in Iran.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 1e18,
+        "costType": "number",
+        "time": 21600,
+        "amount": 125,
+        "index": 3
+    },
+    
+    "slammer": {
+        "name": "slammer",
+        "desc": "slammer executed a classic denial of service on Ohio's nuclear plant.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 1e21,
+        "costType": "number",
+        "time": 43200,
+        "amount": 625,
+        "index": 4
+    },
+    
+    "mydoom": {
+        "name": "mydoom",
+        "desc": "mydoom is the fastest worm that existed, infected more than 1 million computers.",
+        "descInList": false,
+        "oneTime": true,
+        "cost": 1e24,
+        "costType": "number",
+        "time": 86400,
+        "amount": 6125,
+        "index": 5
+    }
+}

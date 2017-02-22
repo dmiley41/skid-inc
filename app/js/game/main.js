@@ -87,6 +87,6 @@ SkidInc.Main = {
             }
         });
         
-        return console.info('SkidInc.Main init done, ready to play.');
+        return console.info('SkidInc.Main init done.');
     }
 };

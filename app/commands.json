@@ -21,6 +21,20 @@
         "exec": "SkidInc.Script.exec"
     },
     
+    "virus": {
+        "full": "virus [name] [argument]",
+        "desc": "run virus and send them to expand your botnet.",
+        "list": true,
+        "listExec": "SkidInc.Virus.list",
+        "args": true,
+        "argsNeeded": ["req", "opt"],
+        "argsType": ["string", "string"],
+        "argsHelpName": ["name", "argument"],
+        "argsHelp": ["the name of the virus you want to execute.",
+            "an optional argument can be included such as <b>-c</b> to stop <b>[name]</b> virus."],
+        "exec": "SkidInc.Virus.exec"
+    },
+    
     "buy": {
         "full": "buy [category] [item]",
         "desc": "buy things to enhance your hacking income.",

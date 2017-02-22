@@ -48,13 +48,15 @@ var SkidInc = {
             SkidInc.Script.init(function() {
                 SkidInc.Autoscript.init(function() {
                     SkidInc.Servers.init(function() {
-                        M.init(); // matrix background init
-                        SkidInc.Options.init();
-                        SkidInc.Main.init();
-                        SkidInc.Socket.init();
-                        SkidInc.Save.init();
-                        
-                        SkidInc._INIT = true;
+                        SkidInc.Virus.init(function() {
+                            M.init(); // matrix background init
+                            SkidInc.Options.init();
+                            SkidInc.Main.init();
+                            SkidInc.Save.init();
+                            SkidInc.Socket.init();
+                            
+                            SkidInc._INIT = true;
+                        });
                     });
                 });
             });

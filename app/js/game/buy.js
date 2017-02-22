@@ -1,8 +1,8 @@
 SkidInc.Buy = {
-    categories: ['script', 'server', 'autoscript'],
-    categoryDesc: ['get new scripts to earn more.', 'buy or upgrade servers to increase your multipliers.', 'buy autoscripts to automatize scripts execution.'],
-    path: ['SkidInc.Script.scripts', 'SkidInc.Servers.servers', 'SkidInc.Autoscript.autoscripts'],
-    ownedPath: ['SkidInc.Script.owned', 'SkidInc.Servers.owned', 'SkidInc.Autoscript.owned'],
+    categories: ['script', 'server', 'autoscript', 'virus'],
+    categoryDesc: ['get new scripts to earn more.', 'buy or upgrade servers to increase your multipliers.', 'buy autoscripts to automatize scripts execution.', 'unlock new virus to create and send them, virus expand your botnet.'],
+    path: ['SkidInc.Script.scripts', 'SkidInc.Servers.servers', 'SkidInc.Autoscript.autoscripts', 'SkidInc.Virus.virus'],
+    ownedPath: ['SkidInc.Script.owned', 'SkidInc.Servers.owned', 'SkidInc.Autoscript.owned', 'SkidInc.Virus.owned'],
     
     list: function() {
         var str = '';

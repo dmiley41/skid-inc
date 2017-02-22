@@ -108,14 +108,16 @@ SkidInc.Save = {
     init: function() {
         SkidInc.Save.loadData(function() {
             SkidInc.Save.saveData();
-            
-            SkidInc._INTERVALS.save = setInterval(function() {
-                SkidInc.Save.saveData();
-            }, 50);
-            
-            SkidInc._INTERVALS.emitSave = setInterval(function() {
-                SkidInc.Save.saveCloud();
-            }, 600000);
         });
+        
+        SkidInc._INTERVALS.save = setInterval(function() {
+            SkidInc.Save.saveData();
+        }, 50);
+
+        SkidInc._INTERVALS.emitSave = setInterval(function() {
+            SkidInc.Save.saveCloud();
+        }, 600000);
+
+        console.info('SkidInc.Save init done.');
     }
 };
