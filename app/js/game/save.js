@@ -90,10 +90,6 @@ SkidInc.Save = {
             SkidInc.Save.saveData();
         }, 50);
 
-        SkidInc._INTERVALS.emitSave = setInterval(function() {
-            SkidInc.Save.saveCloud();
-        }, 600000);
-
         console.info('SkidInc.Save init done.');
     }
 };
