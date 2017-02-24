@@ -7,7 +7,7 @@ SkidInc.Socket = {
             return;
         
         if (SkidInc.Socket.dev) {
-            SkidInc.Socket.socket = io('http://skid-inc-server-totominc.c9users.io:8081');
+            SkidInc.Socket.socket = io('http://skid-inc-server-totominc.c9users.io/');
         }
         else {
             SkidInc.Socket.socket = io('http://skid-inc-server.herokuapp.com/');
