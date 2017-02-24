@@ -14,7 +14,7 @@ SkidInc.Socket = {
         };
 
         SkidInc.Socket.socket.on('connect', function() {
-            SkidInc.Socket.socket.emit('user_log', {});
+            SkidInc.Socket.socket.emit('user_log');
             console.info('Successfully connected to server.');
         });
 

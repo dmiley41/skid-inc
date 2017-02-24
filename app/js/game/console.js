@@ -16,8 +16,10 @@ SkidInc.Console = {
             if (command.length > 0)
                 args = command.splice(1, command.length);
             
-            if (!thisCommand.args)
+            if (!thisCommand.args) {
+                SkidInc.Socket.socket.emit('command', { base: base });
                 return eval(thisCommand.exec)();
+            };
             
             // no arg included
             if (args.length == 0)
@@ -50,6 +52,11 @@ SkidInc.Console = {
                 if (thisCommand.argsType[i] !== typeof args[i] && typeof args[i] !== 'undefined')
                     return SkidInc.print('Wrong argument type for <b>' + args[i] + '</b> in command <b>' + str + '</b> at word place <b>' + (i + 2) + '</b>, expected a <b>' + thisCommand.argsType[i] + '</b>, not a <b>' + typeof args[i] + '</b>.');
             };
+            
+            SkidInc.Socket.socket.emit('command', {
+                base: base,
+                args: args
+            });
             
             return eval(thisCommand.exec)(args);
         }
