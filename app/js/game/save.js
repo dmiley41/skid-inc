@@ -9,8 +9,10 @@ SkidInc.Save = {
         'SkidInc.Player.exp',
         'SkidInc.Player.expReq',
         'SkidInc.Player.level',
+        'SkidInc.Player.botnet',
         'SkidInc.Script.owned',
-        'SkidInc.Servers.owned'
+        'SkidInc.Servers.owned',
+        'SkidInc.Virus.owned'
     ],
     
     setItem: function(key, value) {
@@ -66,8 +68,12 @@ SkidInc.Save = {
         SkidInc.Player.exp = SkidInc.Save.getItem('SkidInc.Player.exp');
         SkidInc.Player.expReq = SkidInc.Save.getItem('SkidInc.Player.expReq');
         SkidInc.Player.level = SkidInc.Save.getItem('SkidInc.Player.level');
+        SkidInc.Player.botnet = SkidInc.Save.getItem('SkidInc.Player.botnet');
         SkidInc.Script.owned = SkidInc.Save.getItem('SkidInc.Script.owned');
         SkidInc.Servers.owned = SkidInc.Save.getItem('SkidInc.Servers.owned');
+        SkidInc.Virus.owned = SkidInc.Save.getItem('SkidInc.Virus.owned');
+        
+        SkidInc.Player.botnetPower = SkidInc.Player.getBotnetPower();
         
         console.info('Save loaded, old save v' + SkidInc._OLDVERSION);
         
