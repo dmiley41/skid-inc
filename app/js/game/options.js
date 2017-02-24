@@ -1,7 +1,7 @@
 SkidInc.Options = {
     options: ['background', 'typing', 'theme'],
     execPath: ['SkidInc.Options.toggleBackground', 'SkidInc.Options.toggleTyping', 'SkidInc.Options.changeTheme'],
-    toggled: [true, false, 'default'],
+    toggled: [false, false, 'default'],
     themes: ['default', 'fallout'],
     themesLocked: [false, true],
     uuid: null,

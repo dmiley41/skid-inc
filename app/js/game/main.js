@@ -42,11 +42,13 @@ SkidInc.Main = {
         $('#stats-time-mult').html('Time mult: /' + fix(SkidInc.Player.getTimeMult(), 2));
         $('#stats-vm-cost').html('VM (lvl. ' + SkidInc.Servers.owned[0] + '): $' + fix(SkidInc.Servers.getCost('vm'), 0));
         $('#stats-vps-cost').html('VPS (lvl. ' + SkidInc.Servers.owned[1] + '): $' + fix(SkidInc.Servers.getCost('vps'), 0));
+        $('#stats-bp').html('BP: ' + fix(SkidInc.Player.botnetPower, 0));
     },
 
     update: function(times) {
         SkidInc.Script.loop(times);
         SkidInc.Autoscript.loop(times);
+        SkidInc.Virus.loop(times);
         
         SkidInc.Main.display();
     },

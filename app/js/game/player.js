@@ -1,9 +1,10 @@
-/* global $ fix M SkidInc */
 SkidInc.Player = {
     money: 0,
     exp: 0,
     expReq: 100,
     level: 1,
+    botnet: 0,
+    botnetPower: 0,
     
     getMoneyMult: function() {
         return 1;
@@ -15,6 +16,14 @@ SkidInc.Player = {
     
     getTimeMult: function() {
         return 1;
+    },
+    
+    getBotnetPower: function() {
+        return SkidInc.Player.botnet;
+    },
+    
+    getBotnetPowerAmount: function(amount) {
+        return amount;
     },
     
     earn: function(type, amount) {
@@ -30,5 +39,9 @@ SkidInc.Player = {
                 SkidInc.print('Level-up, you are now level <b>' + SkidInc.Player.level + '</b>.');
             };
         };
+        if (type == 'botnet') {
+            SkidInc.Player.botnet += amount;
+            SkidInc.Player.botnetPower = SkidInc.Player.getBotnetPower();
+        }
     }
 };

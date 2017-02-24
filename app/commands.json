@@ -30,8 +30,8 @@
         "argsNeeded": ["req", "opt"],
         "argsType": ["string", "string"],
         "argsHelpName": ["name", "argument"],
-        "argsHelp": ["the name of the virus you want to execute.",
-            "an optional argument can be included such as <b>-c</b> to stop <b>[name]</b> virus."],
+        "argsHelp": ["the name of the virus you want to create.",
+            "an optional argument can be included such as <b>-c</b> to stop <b>[name]</b> virus creation."],
         "exec": "SkidInc.Virus.exec"
     },
     
