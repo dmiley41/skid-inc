@@ -81,36 +81,6 @@ SkidInc.Save = {
             return callback();
     },
     
-    saveCloud: function() {
-        SkidInc.Socket.socket.emit('cloud_save', {
-            uuid: SkidInc.Options.uuid,
-            save: SkidInc.Save.getSave()
-        });
-    },
-    
-    loadCloud: function() {
-        SkidInc.Socket.socket.emit('cloud_load', SkidInc.Options.uuid);
-    },
-    
-    loadSavefile: function(save) {
-        save = JSON.parse(save);
-        
-        for (var key in save)
-            eval(key + ' = ' + atob(save[key]));
-    },
-    
-    getSave: function() {
-        var save = {};
-        
-        for (var i = 0; i < SkidInc.Save.toSave.length; i++) {
-            save[SkidInc.Save.toSave[i]] = localStorage.getItem(SkidInc.Save.toSave[i]);
-        };
-        
-        save = JSON.stringify(save);
-        
-        return save;
-    },
-    
     init: function() {
         SkidInc.Save.loadData(function() {
             SkidInc.Save.saveData();
